@@ -1,0 +1,12 @@
+version: "3.11"
+
+services:
+  my_bot:
+    build: .
+    container_name: my_bot_container
+    restart: always
+    command: poetry run python main.py
+    volumes:
+      - .:/app/
+    environment:
+      - PYTHONUNBUFFERED=1
